@@ -20,9 +20,6 @@ class Type extends Enum
 {
     const PNG = '1';
 
-    /**
-     * @inheritDoc
-     */
     public static function labels(): array
     {
         return [

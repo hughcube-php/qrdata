@@ -26,9 +26,6 @@ class Level extends Enum
     const MEDIUM = 'm';
     const LOW = 'l';
 
-    /**
-     * @inheritDoc
-     */
     public static function labels(): array
     {
         return [

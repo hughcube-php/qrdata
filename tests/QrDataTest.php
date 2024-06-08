@@ -111,34 +111,34 @@ class QrDataTest extends TestCase
      * @return array
      * @throws Exception
      */
-    public function attributeDataProvider(): array
+    public static function attributeDataProvider(): array
     {
         return [
-            [$this->randomNonce(), $this->randomNonce()],
-            [$this->randomNonce(), $this->randomNonce()],
-            [$this->randomNonce(), $this->randomNonce()],
+            [static::randomNonce(), static::randomNonce()],
+            [static::randomNonce(), static::randomNonce()],
+            [static::randomNonce(), static::randomNonce()],
 
-            [QrData::USER_KEY, $this->randomNonce()],
-            [QrData::USER_SECRET, $this->randomNonce()],
-            [QrData::SIGNATURE, $this->randomNonce()],
+            [QrData::USER_KEY, static::randomNonce()],
+            [QrData::USER_SECRET, static::randomNonce()],
+            [QrData::SIGNATURE, static::randomNonce()],
             [QrData::CREATED_AT, random_int(1, 99999999), true],
-            [QrData::NONCE, $this->randomNonce(), true],
-            [QrData::DATA, $this->randomNonce()],
-            [QrData::LEVEL, $this->randomArrayValue(Level::all())],
+            [QrData::NONCE, static::randomNonce(), true],
+            [QrData::DATA, static::randomNonce()],
+            [QrData::LEVEL, static::randomArrayValue(Level::all())],
 
-            [QrData::LOGO, $this->randomNonce()],
+            [QrData::LOGO, static::randomNonce()],
             [QrData::LOGO_SIZE, random_int(1, 99999999)],
-            [QrData::TYPE, $this->randomArrayValue(Type::all())],
+            [QrData::TYPE, static::randomArrayValue(Type::all())],
             [QrData::SIZE, random_int(1, 99999999)],
-            [QrData::ENCODING, $this->randomArrayValue(Encoding::all())],
+            [QrData::ENCODING, static::randomArrayValue(Encoding::all())],
             [QrData::MARGIN, random_int(1, 99999999)],
-            [QrData::ROUND_BLOCK_SIZE_MODE, $this->randomArrayValue(RoundBlockSizeMode::all())],
-            [QrData::FOREGROUND_COLOR, $this->randomNonce()],
-            [QrData::BACKGROUND_COLOR, $this->randomNonce()],
-            [QrData::LABEL_TEXT, $this->randomNonce()],
-            [QrData::LABEL_FONT, $this->randomNonce()],
-            [QrData::LABEL_ALIGNMENT, $this->randomNonce()],
-            [QrData::LABEL_TEXT_COLOR, $this->randomNonce()],
+            [QrData::ROUND_BLOCK_SIZE_MODE, static::randomArrayValue(RoundBlockSizeMode::all())],
+            [QrData::FOREGROUND_COLOR, static::randomNonce()],
+            [QrData::BACKGROUND_COLOR, static::randomNonce()],
+            [QrData::LABEL_TEXT, static::randomNonce()],
+            [QrData::LABEL_FONT, static::randomNonce()],
+            [QrData::LABEL_ALIGNMENT, static::randomNonce()],
+            [QrData::LABEL_TEXT_COLOR, static::randomNonce()],
         ];
     }
 
@@ -146,7 +146,7 @@ class QrDataTest extends TestCase
      * @return array
      * @throws Exception
      */
-    public function dataProvider(): array
+    public static function dataProvider(): array
     {
         $qrData = (new QrData())
             ->setUserKey(md5(random_bytes(100)))
@@ -162,7 +162,7 @@ class QrDataTest extends TestCase
     /**
      * @throws Exception
      */
-    protected function randomNonce(): string
+    protected static function randomNonce(): string
     {
         return md5(random_bytes(100));
     }
@@ -170,7 +170,7 @@ class QrDataTest extends TestCase
     /**
      * @throws Exception
      */
-    protected function randomArrayValue($array)
+    protected static function randomArrayValue($array)
     {
         return array_values($array)[random_int(0, (count($array) - 1))];
     }

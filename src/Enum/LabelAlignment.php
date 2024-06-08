@@ -24,9 +24,6 @@ class LabelAlignment extends Enum
     const LEFT = '2';
     const RIGHT = '3';
 
-    /**
-     * @inheritDoc
-     */
     public static function labels(): array
     {
         return [

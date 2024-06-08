@@ -69,8 +69,8 @@ class QrData
 
     /**
      * @param  string  $key
-     * @param  null  $default
-     * @return string|int
+     * @param null|integer|string $default
+     * @return mixed
      */
     public function getAttribute(string $key, $default = null)
     {
@@ -98,7 +98,7 @@ class QrData
     }
 
     /**
-     * @return string|null
+     * @return mixed
      */
     public function getUserKey()
     {
@@ -115,7 +115,7 @@ class QrData
     }
 
     /**
-     * @return string|null
+     * @return mixed
      */
     public function getUserSecret()
     {
@@ -166,7 +166,7 @@ class QrData
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getNonce()
     {
@@ -192,7 +192,7 @@ class QrData
     }
 
     /**
-     * @return string
+     * @return mixed
      */
     public function getData()
     {
@@ -379,7 +379,7 @@ class QrData
     }
 
     /**
-     * @return string|null
+     * @return mixed
      */
     public function getLabelText()
     {
@@ -396,7 +396,7 @@ class QrData
     }
 
     /**
-     * @return string|null
+     * @return mixed
      */
     public function getLabelFont()
     {

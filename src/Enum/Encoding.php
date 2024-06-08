@@ -20,9 +20,6 @@ class Encoding extends Enum
 {
     const UTF8 = 'utf8';
 
-    /**
-     * @inheritDoc
-     */
     public static function labels(): array
     {
         return [

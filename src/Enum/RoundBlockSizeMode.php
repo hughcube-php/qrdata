@@ -26,9 +26,6 @@ class RoundBlockSizeMode extends Enum
     const MARGIN = 'm';
     const SHRINK = 's';
 
-    /**
-     * @inheritDoc
-     */
     public static function labels(): array
     {
         return [
